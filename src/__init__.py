@@ -1,7 +1,7 @@
 from flask import Flask
 import os
 from src.auth import auth
-#from src.bookmarks import bookmarks
+from src.bookmarks import bookmarks
 from src.database import db
 from flask_jwt_extended import JWTManager
 
@@ -30,6 +30,6 @@ def create_app(test_config=None):
 
 
     app.register_blueprint(auth)
-    #app.register_blueprint(bookmarks)
+    app.register_blueprint(bookmarks)
 
     return app
